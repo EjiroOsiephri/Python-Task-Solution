@@ -31,6 +31,7 @@ On Windows:
 ```bash
 
 .\venv\Scripts\activate
+
 ```
 
 On macOS/Linux:
@@ -46,9 +47,12 @@ Once activated, your terminal should reflect the virtual environment as the curr
 3. Install Dependencies
    With the virtual environment activated, install the project dependencies:
 
-bash
+```bash
 
 pip install -r requirements.txt
+
+```
+
 Installed packages include:
 
 requests: For making HTTP requests.
@@ -65,22 +69,35 @@ This will list all installed dependencies, which should include requests and sch
 Scripts Overview
 This project includes four main Python scripts:
 
+###
+
 background_service.py: Runs a background service that prints the current time and checks network connectivity every 30 seconds.
+
+###
 
 api_call_with_retries.py: Makes an API call with retry logic, retrying up to three times if the request fails.
 
+###
+
 network_blocking.py: Simulates blocking network requests to specific domains.
+
+###
 
 file_logging_system.py: Logs successful API calls to a file with timestamps and response status.
 
 Testing the Scripts
 
+###
+
 1. Test the Background Service (background_service.py)
    Steps to Run:
 
 Open a terminal window.
+
 Ensure the virtual environment is activated.
+
 Navigate to the scripts folder if needed.
+
 Run the script:
 
 ```bash
@@ -91,6 +108,7 @@ python background_service.py
 Expected Output: Every 30 seconds, you will see:
 
 Current time: The system’s current date and time.
+
 Network status: Whether the network is connected or disconnected.
 
 Example:
@@ -102,30 +120,37 @@ Network is connected
 
 To stop the script, press Ctrl + C.
 
+###
+
 2. Test API Call with Retries (api_call_with_retries.py)
    Steps to Run:
 
 Open a terminal window and activate the virtual environment.
+
 Navigate to the scripts folder.
+
 Run the script:
 
 python api_call_with_retries.py
 Expected Output: If successful, the JSON response will be printed:
 
-json
-
+```json
 {
-"userId": 1,
-"id": 1,
-"title": "delectus aut autem",
-"completed": false
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
 }
+```
+
 If the request fails, retry messages will appear:
 
 ```php
 
 Attempt 1 failed: <error_message>
 ```
+
+###
 
 3. Test Network Blocking Simulation (network_blocking.py)
    Steps to Run:
@@ -141,11 +166,14 @@ Expected Output: Blocked domains will show:
 ```
 
 Access to https://example.com is blocked.
+
 Other requests will show responses or errors:
 
 ```php
 Request failed: <error_message>
 ```
+
+###
 
 4. Test the File Logging System (file_logging_system.py)
    Steps to Run:
